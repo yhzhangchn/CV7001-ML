@@ -1,0 +1,26 @@
+[
+  {
+    "Manifest": "研究原件校验_2026-11-16.json",
+    "FilesChecked": 44,
+    "Changed": [],
+    "Status": "unchanged"
+  },
+  {
+    "Manifest": "最终版研究原件校验_2026-11-16.json",
+    "FilesChecked": 6,
+    "Changed": [],
+    "Status": "unchanged"
+  },
+  {
+    "Manifest": "普通强度数据库原件校验_2026-11-16.json",
+    "FilesChecked": 1,
+    "Changed": [],
+    "Status": "unchanged"
+  },
+  {
+    "Manifest": "JMCE read-only reference",
+    "FilesChecked": 1,
+    "Changed": [],
+    "Status": "unchanged"
+  }
+]

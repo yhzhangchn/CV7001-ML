@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "source_worksheet": "Raw_GitHub_820",
+  "records": 820,
+  "columns_compared": 14,
+  "source_row_order_preserved": true,
+  "dropped_records": 0,
+  "max_absolute_difference": 4.884981308350689e-15,
+  "comparison": "Numeric values match the original local worksheet within CSV floating-point precision"
+}

@@ -1,0 +1,108 @@
+{
+  "selected_model": "XGBoost",
+  "permutation_scope": "Five development validation folds; ten shuffles per feature in each fold",
+  "importance_unit": "Increase in RMSE (MPa), averaged equally over folds",
+  "permutation_model_settings": "Same fixed settings and folds as the original training run",
+  "ridge_RMSE_reduction_pct": 46.69911001900249,
+  "RF_RMSE_reduction_pct": 4.779761266511406,
+  "strength_bands": [
+    {
+      "strength_band_MPa": "<20",
+      "n_test": 10,
+      "n_development": 55,
+      "MAE": 5.311238591308593,
+      "RMSE": 8.340191564361609,
+      "mean_error": 5.163301854248047
+    },
+    {
+      "strength_band_MPa": "20-<60",
+      "n_test": 129,
+      "n_development": 563,
+      "MAE": 3.669093251664509,
+      "RMSE": 5.4701518353518885,
+      "mean_error": 0.7722587421032813
+    },
+    {
+      "strength_band_MPa": ">=60",
+      "n_test": 11,
+      "n_development": 52,
+      "MAE": 10.6939311356978,
+      "RMSE": 15.446192080173352,
+      "mean_error": -7.949227100719105
+    }
+  ],
+  "error_coverage": [
+    {
+      "absolute_error_limit_MPa": 5,
+      "n_within": 109,
+      "n_total": 150,
+      "fraction_within": 0.7266666666666667
+    },
+    {
+      "absolute_error_limit_MPa": 10,
+      "n_within": 134,
+      "n_total": 150,
+      "fraction_within": 0.8933333333333333
+    }
+  ],
+  "development_importance": [
+    {
+      "feature": "ggbfs_kg_m3",
+      "delta_RMSE_mean": 7.5213942001714145,
+      "fold_mean_SD": 0.9807101290518353
+    },
+    {
+      "feature": "naoh_molarity_mol_l",
+      "delta_RMSE_mean": 7.161380758742155,
+      "fold_mean_SD": 2.0151963094524326
+    },
+    {
+      "feature": "curing_temperature_c",
+      "delta_RMSE_mean": 2.5210038136150397,
+      "fold_mean_SD": 0.6700271784902726
+    },
+    {
+      "feature": "fly_ash_kg_m3",
+      "delta_RMSE_mean": 1.6757263726210376,
+      "fold_mean_SD": 0.6577248266443503
+    },
+    {
+      "feature": "sodium_silicate_kg_m3",
+      "delta_RMSE_mean": 1.5012985452573941,
+      "fold_mean_SD": 0.43743224545906845
+    },
+    {
+      "feature": "fine_aggregate_kg_m3",
+      "delta_RMSE_mean": 1.1354518884096634,
+      "fold_mean_SD": 0.9839864129647906
+    },
+    {
+      "feature": "coarse_aggregate_kg_m3",
+      "delta_RMSE_mean": 0.9468560066265062,
+      "fold_mean_SD": 0.7985274635726086
+    },
+    {
+      "feature": "naoh_content_kg_m3",
+      "delta_RMSE_mean": 0.6490586814058352,
+      "fold_mean_SD": 0.23269057779555613
+    },
+    {
+      "feature": "age_days",
+      "delta_RMSE_mean": 0.586136585131397,
+      "fold_mean_SD": 0.2768974462607274
+    },
+    {
+      "feature": "extra_water_kg_m3",
+      "delta_RMSE_mean": 0.4029151518440231,
+      "fold_mean_SD": 0.24212730235182067
+    }
+  ],
+  "max_absolute_test_error": 34.895267486572266,
+  "input_file_sha256": {
+    "test_predictions.csv": "ec1a0bbefb462df32f8da5ded92021f3cadca5a12b30d79acbf2de4008823efa",
+    "metrics.csv": "d9900f3e2b6c68cf6734852a81fa2f63bb31f6268fe32d28331a8c45132316c5",
+    "split_assignments.csv": "90c533c45e554ad9ce9ce345152fae9e24e056c7031e840061b876716eed0f39",
+    "cv_folds.csv": "d812ff44da5c5e59434d23582cef9d4729316810036088e1e5f8a75bd99ce5e5"
+  },
+  "analysis_code_sha256": "96dc43ce4c6a2e445dd2f2b14281e904f72f4f6574610d79b7c726b23225d4ad"
+}

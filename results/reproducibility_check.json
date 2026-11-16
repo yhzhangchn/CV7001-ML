@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "method": "Fresh-directory training and inference from copied code, data and examples",
+  "commands": [
+    {
+      "command": "python train.py",
+      "stdout": "        model  cv_RMSE_mean  cv_RMSE_std  test_R2  test_RMSE  test_MAE\n        Ridge     11.872637     1.353856 0.083895  12.980251  9.673262\nRandom Forest      7.122142     1.121102 0.712951   7.265881  4.671018\n      XGBoost      6.997922     1.104404 0.739736   6.918589  4.293724\nRecords: 820; dev/test: 670/150; mixtures: 455; selected: XGBoost\n",
+      "stderr": ""
+    },
+    {
+      "command": "python predict.py",
+      "stdout": " predicted_strength_mpa  outside_training_feature_range\n              32.742344                           False\n              37.049427                           False\n",
+      "stderr": ""
+    },
+    {
+      "command": "python analyze_results.py",
+      "stdout": "               feature  delta_RMSE_mean  fold_mean_SD\n           ggbfs_kg_m3         7.521394      0.980710\n   naoh_molarity_mol_l         7.161381      2.015196\n  curing_temperature_c         2.521004      0.670027\n         fly_ash_kg_m3         1.675726      0.657725\n sodium_silicate_kg_m3         1.501299      0.437432\n  fine_aggregate_kg_m3         1.135452      0.983986\ncoarse_aggregate_kg_m3         0.946856      0.798527\n    naoh_content_kg_m3         0.649059      0.232691\n              age_days         0.586137      0.276897\n     extra_water_kg_m3         0.402915      0.242127\nstrength_band_MPa  n_test  n_development       MAE      RMSE  mean_error\n              <20      10             55  5.311239  8.340192    5.163302\n           20-<60     129            563  3.669093  5.470152    0.772259\n             >=60      11             52 10.693931 15.446192   -7.949227\n absolute_error_limit_MPa  n_within  n_total  fraction_within\n                        5       109      150         0.726667\n                       10       134      150         0.893333\n",
+      "stderr": ""
+    }
+  ],
+  "compared_files": [
+    "metrics.csv",
+    "test_predictions.csv",
+    "train_predictions.csv",
+    "example_predictions.csv",
+    "strength_bands.csv",
+    "error_coverage.csv",
+    "development_permutation_importance.csv",
+    "permutation_folds.csv",
+    "split_assignments.csv"
+  ],
+  "numeric_tolerance": {
+    "rtol": 1e-10,
+    "atol": 1e-10
+  },
+  "dataset_sha256": "1e2e525a1f93e6b094844683d3e7c8f2320598a15669332bccd1c05113456cc1",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0",
+    "openpyxl": "3.1.5"
+  },
+  "code_sha256": {
+    "pipeline.py": "8a7f83a9e3f85b558a0ed791ffd9777addbbe8551a857f440bc206606f118bf5",
+    "train.py": "d309a76919f4b2ee38753e90319c1e7b9bff75290b2b0e5fe5848b75eec5ef61",
+    "predict.py": "dc3934c0a0e9a512ed177d610f298525bd19715751f9f1b4007d8d13fc802951",
+    "plot_results.py": "02aa24f8490305c00f3f14f2bbd58e46e88658040abdb26a3c5a7ca887d29256"
+  },
+  "unit_checks": 6,
+  "scope": "Same machine and pinned Python environment"
+}

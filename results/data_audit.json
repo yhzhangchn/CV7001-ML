@@ -1,0 +1,78 @@
+{
+  "raw_sha256": "1e2e525a1f93e6b094844683d3e7c8f2320598a15669332bccd1c05113456cc1",
+  "raw_rows_after_header": 820,
+  "records_retained": 820,
+  "features": [
+    "naoh_content_kg_m3",
+    "sodium_silicate_kg_m3",
+    "ggbfs_kg_m3",
+    "fly_ash_kg_m3",
+    "extra_water_kg_m3",
+    "fine_aggregate_kg_m3",
+    "coarse_aggregate_kg_m3",
+    "naoh_molarity_mol_l",
+    "curing_temperature_c",
+    "age_days"
+  ],
+  "omitted_predictors": [
+    "ss_sh_ratio",
+    "alkaline_binder_ratio",
+    "superplasticizer_kg_m3"
+  ],
+  "target": "strength_mpa",
+  "source_labels": 1,
+  "row_level_study_mapping_available": false,
+  "mixture_groups": 455,
+  "grouping_fields": [
+    "naoh_content_kg_m3",
+    "sodium_silicate_kg_m3",
+    "ggbfs_kg_m3",
+    "fly_ash_kg_m3",
+    "extra_water_kg_m3",
+    "fine_aggregate_kg_m3",
+    "coarse_aggregate_kg_m3"
+  ],
+  "grouping_precision_decimals": 8,
+  "recorded_zero_molarity_rows": 26,
+  "identical_selected_input_output_repeats_retained": 0,
+  "identical_selected_input_rows": 43,
+  "excluded_rows": [],
+  "cleaning_policy": "All 820 source rows retained; numeric values and source codes preserved.",
+  "random_seed": 42,
+  "train_records": 670,
+  "test_records": 150,
+  "train_groups": 364,
+  "test_groups": 91,
+  "train_test_source_overlap": 1,
+  "train_test_mixture_overlap": 0,
+  "split_rule": "Fixed seed-42 20% base-composition holdout; five grouped CV folds within development only",
+  "supplied_split_metadata": {
+    "split_strategy": "GroupShuffleSplit_20pct_base_compositions",
+    "random_state": 42,
+    "holdout_fraction": 0.2,
+    "n_mixes_total": 455,
+    "n_mixes_holdout": 91,
+    "n_samples_total": 820,
+    "n_samples_holdout": 150
+  },
+  "holdout_record_fraction": 0.18292682926829268,
+  "holdout_mixture_fraction": 0.2,
+  "parameter_selection": "Fixed model settings; selected by mean development-CV RMSE",
+  "selected_model": "XGBoost",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0",
+    "openpyxl": "3.1.5"
+  },
+  "code_sha256": {
+    "pipeline.py": "8a7f83a9e3f85b558a0ed791ffd9777addbbe8551a857f440bc206606f118bf5",
+    "train.py": "d309a76919f4b2ee38753e90319c1e7b9bff75290b2b0e5fe5848b75eec5ef61",
+    "predict.py": "dc3934c0a0e9a512ed177d610f298525bd19715751f9f1b4007d8d13fc802951",
+    "plot_results.py": "02aa24f8490305c00f3f14f2bbd58e46e88658040abdb26a3c5a7ca887d29256"
+  }
+}
