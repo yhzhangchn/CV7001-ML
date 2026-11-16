@@ -31,7 +31,7 @@
 This project predicts the compressive strength of geopolymer concrete from mixture composition, curing conditions and specimen age. Such predictions can help compare mixtures during material selection. I used a public dataset to train Ridge regression, Random Forest and XGBoost, then compared their accuracy on withheld mixtures.
 
 \section{Dataset and Method}
-Aravind-Unni's GPC Dataset contains \Ntotal{} records, 13 predictors and measured compressive strength in MPa~\cite{data}. I used the previously downloaded copy and retained all 820 records. The accompanying CSV preserves the original row order and numerical values.
+Aravind-Unni's GPC Dataset contains \Ntotal{} records, 13 predictors and measured compressive strength in MPa~\cite{data}. All 820 records were included.
 
 I selected ten inputs before training: seven material amounts (NaOH, sodium silicate, GGBFS, fly ash, extra water, fine aggregate and coarse aggregate, in kg/m$^3$), NaOH molarity, curing temperature and specimen age. Molarity and temperature distinguish records with the same material amounts tested under different preparation conditions.
 
@@ -63,7 +63,7 @@ XGBoost gives the lowest CV RMSE and a test $R^2=0.740$, RMSE $=6.92$ MPa and MA
 \caption{XGBoost predictions for the 150 held-out observations. Dashed lines denote perfect agreement (left) and zero error (right). Errors are predicted minus measured strength.}
 \end{figure}
 
-Of the 150 test predictions, 109 (72.7\%) fall within 5 MPa of the measurements and 134 (89.3\%) within 10 MPa. Table~\ref{tab:bands} separates the errors by measured strength. The 20--60 MPa range has the lowest MAE, $3.67$ MPa. Below 20 MPa, the model overpredicts by $5.16$ MPa on average; at 60 MPa and above, it underpredicts by $7.95$ MPa. These opposing biases show a tendency toward intermediate strengths. For example, one 74.50 MPa observation is predicted as 39.60 MPa.
+Of the 150 test predictions, 109 (72.7\%) fall within 5 MPa of the measurements and 134 (89.3\%) within 10 MPa. Table~\ref{tab:bands} separates the errors by measured strength. MAE is lowest for strengths from 20 to below 60 MPa ($3.67$ MPa). Below 20 MPa, the model overpredicts by $5.16$ MPa on average; at 60 MPa and above, it underpredicts by $7.95$ MPa. These opposing biases show a tendency toward intermediate strengths. For example, one 74.50 MPa observation is predicted as 39.60 MPa.
 
 \begin{table}[ht]
 \centering
@@ -88,7 +88,7 @@ The development-fold permutation analysis ranks GGBFS content and NaOH molarity 
 \end{minipage}
 
 \section{Conclusions and Reflection}
-With ten inputs, the selected XGBoost model reduces test RMSE from $12.98$ to $6.92$ MPa relative to Ridge. Slag content, NaOH concentration and curing temperature are the leading predictors in the development analysis. Accuracy is strongest in the 20--60 MPa range; high-strength mixtures are the clearest weakness, with MAE nearly three times as large. Only 52 of 670 development records reach 60 MPa, making additional high-strength data a targeted next step. Source checks should also resolve the 26 zero-coded molarities and recover study labels for further validation.
+With ten inputs, the selected XGBoost model reduces test RMSE from $12.98$ to $6.92$ MPa relative to Ridge. Slag content, NaOH concentration and curing temperature are the leading predictors in the development analysis. Accuracy is highest from 20 to below 60 MPa; high-strength mixtures are the clearest weakness, with MAE nearly three times as large. Only 52 of 670 development records reach 60 MPa, making additional high-strength data a targeted next step.
 
 \section*{Reproducibility and Disclosures}
 The project includes code, data and a README with training and prediction instructions.
