@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.aux
+*.log
+*.out
+*.synctex.gz
+report/_build/
+verification_run/
+.cache/
+local_tools/
+本地运行与提交说明.md
+report/中文审阅版*.pdf
