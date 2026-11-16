@@ -1,0 +1,67 @@
+{
+  "dataset": "gpc_database_820.csv",
+  "files": {
+    "gpc_database_820.csv": "1e2e525a1f93e6b094844683d3e7c8f2320598a15669332bccd1c05113456cc1",
+    "holdout_assignment.csv": "f66ab9cb12491a6a1b7dffd0714b9a8f5141b39d1853a4721647b1fefcbe7936",
+    "holdout_metadata.csv": "e214bd53525c6702ab6a538496ce2a0e0429c924af6a7d0b33e32c6265678f99"
+  },
+  "source": {
+    "local_workbook": "geopolymer_broad_collection_886_rows.xlsx",
+    "local_workbook_sha256": "1857a20f96c56c42b516094376c59de955bea9ab986f5f2399cf10afa2c729ac",
+    "worksheet": "Raw_GitHub_820",
+    "repository": "https://github.com/Aravind-Unni/GPC-Dataset",
+    "provenance": "Previously downloaded local copy of the public GPC dataset",
+    "original_headers": [
+      "Fly Ash (FA) (kg/m3)",
+      "GGBFS (kg/m3)",
+      "Coarse aggregates (CA) (kg/m3)",
+      "Fine Aggregates (F)  (kg/m3)",
+      "NaOH Content (SH) (kg/m3)",
+      "Molarity of NaOH (M)",
+      "Na2SiO3 (SS) (kg/m3)",
+      "SS/SH",
+      "Alkaline to Binder Ratio(AB)",
+      "Age of Mix (Days)",
+      "Curing Temperature (T)  (oC)",
+      "Extra Water (EW)  (kg/m3)",
+      "Superplasticizer (SP) (kg/m3)",
+      "Compressive Strength (CS)(MPa)"
+    ],
+    "normalised_headers": [
+      "fly_ash_kg_m3",
+      "ggbfs_kg_m3",
+      "coarse_aggregate_kg_m3",
+      "fine_aggregate_kg_m3",
+      "naoh_content_kg_m3",
+      "naoh_molarity_mol_l",
+      "sodium_silicate_kg_m3",
+      "ss_sh_ratio",
+      "alkaline_binder_ratio",
+      "age_days",
+      "curing_temperature_c",
+      "extra_water_kg_m3",
+      "superplasticizer_kg_m3",
+      "strength_mpa"
+    ]
+  },
+  "feature_policy": {
+    "selected": [
+      "naoh_content_kg_m3",
+      "sodium_silicate_kg_m3",
+      "ggbfs_kg_m3",
+      "fly_ash_kg_m3",
+      "extra_water_kg_m3",
+      "fine_aggregate_kg_m3",
+      "coarse_aggregate_kg_m3",
+      "naoh_molarity_mol_l",
+      "curing_temperature_c",
+      "age_days"
+    ],
+    "omitted": [
+      "ss_sh_ratio",
+      "alkaline_binder_ratio",
+      "superplasticizer_kg_m3"
+    ],
+    "decision": "Ten inputs selected before training: material amounts, molarity, temperature and age."
+  }
+}

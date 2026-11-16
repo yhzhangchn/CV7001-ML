@@ -1,0 +1,2 @@
+split_strategy,random_state,holdout_fraction,n_mixes_total,n_mixes_holdout,n_samples_total,n_samples_holdout
+GroupShuffleSplit_20pct_base_compositions,42,0.2,455,91,820,150
